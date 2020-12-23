@@ -1,4 +1,4 @@
-# Kazakh Open Source -- Development of a module for information and analytical data analysis of text resources and documents of the Kazakh language based on machine learning
+# Kazakh Open Source -- Development of a marked-up corpus of the Kazakh language based on machine learning
 * **System Requirements** 
   * OS: Linux
   * Database: mysql > 5.0
