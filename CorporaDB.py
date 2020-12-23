@@ -12,7 +12,7 @@ class corporaDB():
         return self.__user
     def getPassword(self):
         return self.__password
-    def __init__(self, host = 'localhost', user = 'haker3102', password = 'Abilayxan99'):
+    def __init__(self, host = 'localhost', user = 'root', password = ''):
         self.__host = host
         self.__user = user
         self.__password = password
