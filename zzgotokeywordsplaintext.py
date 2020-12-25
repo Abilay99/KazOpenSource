@@ -4,9 +4,9 @@ import os,glob
 from tqdm import tqdm
 from time import monotonic
 from datetime import timedelta
+print("Keywords to plain text processing...")
 
-
-papka_korpus = os.path.dirname(__file__)
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
 papka_keywords = os.path.join(papka_korpus, "testKeywords")
 papka_outtexts = os.path.join(papka_korpus, "testouttexts")
 papka_train = os.path.join(papka_korpus, "testtrain")
@@ -41,7 +41,6 @@ for i in range(len(stxt)):
 
 #textter
 
-global_katolog = "/media/gpu2/59f87a06-90bf-49c9-a6c0-34f26ab5287c/SEproject/corporaD/outtexts/" 
 files = glob.glob(os.path.join(papka_outtexts, "*.gt"))
 length = len(files)
 pbar = tqdm(files)
