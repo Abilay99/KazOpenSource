@@ -44,6 +44,8 @@
   * Inserting *.txt files to directory **testbasictexts**
   * use terminal: python3 zzgotokeywordsplaintext.py
   * see directory testKeywords
+  * use terminal: python3 zzgotoAbstracts.py
+  * see directory testAbstracts
   * Editing file CorporaDB inserting your root password from mysql and launch interface0.0.1 forms
   * use terminal: python3 interface0.0.1.py
 
