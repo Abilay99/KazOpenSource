@@ -2,9 +2,9 @@ import os,glob
 import xlwt
 import re
 from Global import (TF_IDF, tf_idf, bigram, bi_tf_idf)
-
-papka_train = os.path.join(os.path.dirname(__file__), "testtrain")
-papka_korpus = os.path.dirname(__file__)
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
+papka_train = os.path.join(papka_korpus, "testtrain")
+print("Keywords to excell processing...")
 #TF_IDF jaily aqparat
 print(TF_IDF.__doc__)
 #-------------------------------------------------------------------------------------------------
