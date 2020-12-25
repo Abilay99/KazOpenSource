@@ -1,6 +1,6 @@
 import os
 import re
-papka_korpus = os.path.dirname(__file__)
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
 f = open(os.path.join(os.path.join(papka_korpus, "testbasictexts"), "Elbasy kitaptary.txt"), 'r', encoding="utf-8")
 txt = f.read()
 
