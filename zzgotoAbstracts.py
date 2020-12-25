@@ -3,6 +3,7 @@ from tqdm import tqdm
 from Global import summarizer
 from time import monotonic
 from datetime import timedelta
+print("Abstraction processing...")
 papka_korpus = os.path.dirname(os.path.abspath(__file__))
 papka_abstracts = os.path.join(papka_korpus, "testAbstracts")
 
