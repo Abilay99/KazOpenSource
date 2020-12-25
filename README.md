@@ -41,11 +41,9 @@
       * cd $HOME/KazOpenCorpora 
       * pip install -r requirements.txt 
 * **Test**
-  * Inserting *.txt files to directory **testbasictexts**
-  * use terminal: python3 zzgotokeywordsplaintext.py
-  * see directory testKeywords
-  * use terminal: python3 zzgotoAbstracts.py
-  * see directory testAbstracts
+  * Inserting *.txt(Plain text on Kazakh lang.) files to directory **testbasictexts**, but more than 5 files for great results
+  * use terminal: python3 launch.py
+  * see directories testKeywords, testAbstracts and file keywords.xls
   * Editing file CorporaDB inserting your root password from mysql and launch interface0.0.1 forms
   * use terminal: python3 interface0.0.1.py
 
