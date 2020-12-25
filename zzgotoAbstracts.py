@@ -1,12 +1,12 @@
 import os, glob, sys
 from tqdm import tqdm
 papka_korpus = os.path.dirname(__file__)
-papka_abstracts = os.path.join(papka_korpus, "Abstracts")
+papka_abstracts = os.path.join(papka_korpus, "testAbstracts")
 from Global import summarizer
 from time import monotonic
 from datetime import timedelta
 
-utechka = glob.glob(os.path.join(papka_korpus,"basictexts/*.txt")
+utechka = glob.glob(os.path.join(papka_korpus,"testbasictexts/*.txt")
 pbar = tqdm(utechka)
 start_time = monotonic()
 for file in pbar:
