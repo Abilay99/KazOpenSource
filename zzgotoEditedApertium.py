@@ -1,10 +1,12 @@
 import re, os, glob
-papka_korpus = os.path.dirname(__file__)
-papka_editedapertium = os.path.join(papka_korpus, "testEditedApertium")
-papka_apertium = os.path.join(papka_korpus, "testApertium")
 from tqdm import tqdm
 from time import monotonic, sleep
 from datetime import timedelta
+print("Apertium edited...")
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
+papka_editedapertium = os.path.join(papka_korpus, "testEditedApertium")
+papka_apertium = os.path.join(papka_korpus, "testApertium")
+
 def sub(newtext):
     newtext = re.sub(r'[.]+([.]|[,]|[!]|[?])+', '. ', newtext)
     newtext = re.sub(r'[,]+([.]|[,]|[!]|[?])+', ', ', newtext)
@@ -25,8 +27,8 @@ def soilemgebolu(text):
 
 def sozgebolu(text):
     return re.findall(r"\w+", text)
-global_katolog = "/media/gpu2/59f87a06-90bf-49c9-a6c0-34f26ab5287c/SEproject/corporaD/testbasictexts/" 
-files = glob.glob(global_katolog+"*.txt")
+global_katolog = os.path.join(papka_korpus,"testbasictexts") 
+files = glob.glob(os.path.join(global_katolog,"*.txt"))
 length = len(files)
 pbar = tqdm(files)
 start_time = monotonic()
