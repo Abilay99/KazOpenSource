@@ -11,7 +11,7 @@ papka_keywords = os.path.join(papka_korpus, "testKeywords")
 papka_outtexts = os.path.join(papka_korpus, "testouttexts")
 papka_train = os.path.join(papka_korpus, "testtrain")
 #TF_IDF jaily aqparat
-print(TF_IDF.__doc__)
+#print(TF_IDF.__doc__)
 #-------------------------------------------------------------------------------------------------
 
 def sozgebolu(text):
