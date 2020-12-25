@@ -1,6 +1,7 @@
 import re
 import os,glob
-papka_korpus = os.path.dirname(__file__)
+print("Train processing...")
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
 papka_outtexts = os.path.join(papka_korpus, "testouttexts")
 papka_train = os.path.join(papka_korpus, "testtrain")
 from tqdm import tqdm
