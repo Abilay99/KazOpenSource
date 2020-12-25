@@ -2,11 +2,15 @@ import os,glob
 import xlwt
 import re
 from Global import (TF_IDF, tf_idf, bigram, bi_tf_idf)
+from tqdm import tqdm
+from time import monotonic
+from datetime import timedelta
 papka_korpus = os.path.dirname(os.path.abspath(__file__))
 papka_train = os.path.join(papka_korpus, "testtrain")
+papka_outtexts = os.path.join(papka_korpus, "testouttexts")
 print("Keywords to excell processing...")
 #TF_IDF jaily aqparat
-print(TF_IDF.__doc__)
+#print(TF_IDF.__doc__)
 #-------------------------------------------------------------------------------------------------
 
 def sozgebolu(text):
@@ -44,13 +48,14 @@ for i in range(len(stxt)):
     stxt[i] = l
 
 #textter
-sany = 1
-for filename in glob.glob(os.path.join(os.path.join(papka_korpus, "testouttexts"), '*.gt')):
-    with open(filename, 'r', encoding="utf-8") as f:
-        
-        print(sany)
-        sany += 1
-        indpath = filename.rfind("/")
+files = glob.glob(os.path.join(papka_outtexts, "*.gt"))
+length = len(files)
+pbar = tqdm(files)
+start_time = monotonic()
+for fail in pbar:
+    filename = fail[fail.rfind("/")+1:]
+    pbar.set_description(f"Жасалуда {str(filename)}")
+    with open(fail, 'r', encoding="utf-8") as f:
         inddot = filename.rfind(".")
         txt = f.read()
 
@@ -89,7 +94,7 @@ for filename in glob.glob(os.path.join(os.path.join(papka_korpus, "testouttexts"
         bi_idf = BiTfIdf.bi_idf_esepteu()
         bi_tfidf = BiTfIdf.bi_tf_idf_esepteu()
 
-        ws = wb.add_sheet(filename[indpath+1:inddot], cell_overwrite_ok = True)
+        ws = wb.add_sheet(filename[:inddot], cell_overwrite_ok = True)
         ws.write_merge(0, 0, 0, 1, "TF", style0)
         ws.write_merge(0, 0, 2, 3, "IDF", style0)
         ws.write_merge(0, 0, 4, 5, "TF-IDF",style0)
@@ -155,3 +160,7 @@ for filename in glob.glob(os.path.join(os.path.join(papka_korpus, "testouttexts"
             i += 1
             nexti += 1
 wb.save(os.path.join(papka_korpus, "keywords.xls"))
+end_time = monotonic()
+timedel = end_time - start_time 
+
+print("Аяқталды! Барлығы {0} құжат. Жұмсалған уақыт: {1}".format(length, timedelta(seconds=timedel)))
