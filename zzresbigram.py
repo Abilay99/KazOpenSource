@@ -1,8 +1,8 @@
 import os
 from Global import (TF_IDF, bi_tf_idf, bigram)
-
-papka_korpus = os.path.dirname(__file__)
-papka_train = os.path.join(os.path.dirname(__file__), "train")
+print("test processing...")
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
+papka_train = os.path.join(papka_korpus, "testtrain")
 #TF_IDF jaily aqparat
 print(TF_IDF.__doc__)
 
@@ -25,7 +25,7 @@ def head(text):
     string += "\n"
     return string
 
-f = open(os.path.join(os.path.join(papka_korpus, "outtexts"), "Elbasy kitaptary.gototrain"), 'r', encoding="utf-8")
+f = open(os.path.join(os.path.join(papka_korpus, "testouttexts"), "Elbasy kitaptary.gt"), 'r', encoding="utf-8")
 txt = f.read()
 
 bi = bigram(text = txt, papka_korpus = papka_korpus)
