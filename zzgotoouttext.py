@@ -1,6 +1,6 @@
 import re
 import os,glob
-papka_korpus = os.path.dirname(__file__)
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
 papka_editedapertium = os.path.join(papka_korpus, "testEditedApertium")
 papka_outtexts = os.path.join(papka_korpus, "testouttexts")
 from tqdm import tqdm
