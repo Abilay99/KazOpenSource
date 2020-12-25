@@ -1,13 +1,14 @@
 import os, glob
-
-papka_korpus = os.path.dirname(__file__)
-papka_apertium = os.path.join(papka_korpus, "testApertium")
 from tqdm import tqdm
 from time import monotonic, sleep
 from datetime import timedelta
-global_katolog = "/media/gpu2/59f87a06-90bf-49c9-a6c0-34f26ab5287c/SEproject/corporaD/testbasictexts/" 
-files = glob.glob(global_katolog+"*.txt")
-f = open("/media/gpu2/59f87a06-90bf-49c9-a6c0-34f26ab5287c/SEproject/corporaD/errors/error.log", 'a+', encoding="utf-8")
+print("Apertium processing...")
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
+papka_apertium = os.path.join(papka_korpus, "testApertium")
+
+global_katolog = os.path.join(papka_korpus, 'testbasictexts') 
+files = glob.glob(os.path.join(global_katolog,"*.txt"))
+f = open(os.path.join(papka_korpus, "errors/error.log"), 'a+', encoding="utf-8")
 length = len(files)
 pbar = tqdm(files)
 start_time = monotonic()
