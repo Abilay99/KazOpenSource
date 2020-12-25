@@ -1,8 +1,9 @@
 import re
 from Global import (TF_IDF, tf_idf)
 import os
-papka_korpus = os.path.dirname(__file__)
-papka_train = os.path.join(os.path.dirname(__file__), "train")
+print("test processing...")
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
+papka_train = os.path.join(papka_korpus, "testtrain")
 #TF_IDF jaily aqparat
 print(TF_IDF.__doc__)
 
@@ -43,7 +44,7 @@ def sozgebolu(text):
         del sozder[len(sozder)-1]
     return [sozder, tag]
 #----------------------------------------------------------------------------------------------------
-fl = open(os.path.join(os.path.join(papka_korpus, "outtexts"), "Elbasy kitaptary.gototrain"), 'r', encoding="utf-8")
+fl = open(os.path.join(os.path.join(papka_korpus, "testouttexts"), "Elbasy kitaptary.gt"), 'r', encoding="utf-8")
 txt = fl.read()
 
 f = open(os.path.join(papka_korpus,"Global/MorfAnaliz/stopw.txt"), 'r', encoding="utf-8")
