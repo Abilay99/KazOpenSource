@@ -8,7 +8,7 @@ from CorporaDB import corporaDB
 from subprocess import PIPE, run
 import collections, re
 import math
-papka_korpus = os.path.dirname(__file__)
+papka_korpus = os.path.dirname(os.path.abspath(__file__))
 from sys import platform
 OS = "unknown"
 __sep = "\\"
